@@ -1,0 +1,92 @@
+:root {
+  --font-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --text-dark: #213547;
+  --text-light: #ffffff;
+  --bg-dark: #242424;
+  --bg-light: #ffffff;
+  --primary: #4f46e5;
+  --primary-hover: #3730a3;
+  --button-bg-dark: #1a1a1a;
+  --button-bg-light: #f9f9f9;
+
+  font-family: var(--font-base);
+  line-height: 1.6;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Input Fields */
+input[type="text"] {
+  padding: 0.5em 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary);
+}
+
+/* Buttons */
+button {
+  border-radius: 6px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg-dark);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 3px solid var(--primary-hover);
+}
+
+/* Light Theme */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+  }
+
+  button {
+    background-color: var(--button-bg-light);
+    color: var(--text-dark);
+  }
+
+  button:hover {
+    background-color: var(--primary);
+    color: white;
+  }
+}
